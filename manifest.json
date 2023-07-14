@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Cvetici i leptirici",
+    "version": "1.0",
+    "description": "Zamenjuje toksicne tvitove cveticima i leptiricima.",
+    "icons": {
+        "16": "icons/16.png",
+        "32": "icons/32.png",
+        "48": "icons/48.png",
+        "128": "icons/128.png"
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://twitter.com/*",
+            "https://www.twitter.com/*"
+          ]
+        }
+      ]
+  }
