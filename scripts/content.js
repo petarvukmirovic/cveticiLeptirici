@@ -24,26 +24,6 @@ function replaceWithFlowerOrButterfly(tweetText) {
 }
 
 
-function waitForElm(selector) {
-    return new Promise(resolve => {
-        if (document.querySelectorAll(selector).length != 0) {
-            return resolve(document.querySelectorAll(selector));
-        }
-
-        const observer = new MutationObserver(mutations => {
-            if (document.querySelectorAll(selector).length != 0) {
-                resolve(document.querySelectorAll(selector));
-                observer.disconnect();
-            }
-        });
-        
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    });
-}
-
 function replaceTweetText() {
     document.querySelectorAll('div[data-testid="tweetText"]').forEach(
         container => {
